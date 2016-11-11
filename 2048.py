@@ -131,7 +131,7 @@ def check_death():
 
 
 def show_empty():
-	tmp = 1
+    tmp = 1
     for y in range(4):
     	for x in range(4):
     		if y == tmp:
