@@ -130,21 +130,24 @@ def check_death():
 	return True
 
 
+def show_empty():
+	tmp = 1
+    for y in range(4):
+    	for x in range(4):
+    		if y == tmp:
+				print '\n'
+				tmp+=1
+    		if (x,y) in empty:
+    			print (x,y),
+    		else:
+    			print '      ',
+	print '\n'
+
 def run():
     global is_move
     init_world()
     while True:
-    	tmp = 1
-        for y in range(4):
-        	for x in range(4):
-        		if y == tmp:
-    				print '\n'
-    				tmp+=1
-        		if (x,y) in empty:
-        			print (x,y),
-        		else:
-        			print '      ',
-    	print '\n'
+    	# show_empty()
         print_world()
         move = raw_input("your move!\n")
         if move not in ('a','s','w','d','q'):
@@ -155,11 +158,11 @@ def run():
         move_all(move)
         
         if check_death():
+        	print_world()
         	print 'you dead sb!!!'
         	return
         if is_move:
         	set_xy(random.choice(empty), random.choice([2, 4]))
         	is_move = False
-
 
 run()
