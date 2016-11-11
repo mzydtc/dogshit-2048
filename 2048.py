@@ -143,6 +143,7 @@ def show_empty():
     			print '      ',
 	print '\n'
 
+
 def run():
     global is_move
     init_world()
